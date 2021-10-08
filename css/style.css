@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,900&display=swap');
 
 body {
+  background-color: #fafbfc;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 20px;
@@ -45,6 +46,12 @@ time {
     border-style: solid;
     border-width: 0.5px;
     border-color: #BDBDBD;
+    background-color: white;
+    padding: 20px 15px;
+}
+
+.card img {
+
 }
 
 p {
@@ -62,4 +69,24 @@ a:hover {
 
 a:visited {
   color: #045BC0;
+}
+
+.readmore::before{
+  content: '\1433';
+  padding-right: 10px;
+  display:inline-block;
+}
+
+.readmore:hover::before{
+  text-decoration: none;
+}
+
+.backtooverview::before{
+  content: '\1438';
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.backtooverview:hover::before{
+  text-decoration: none;
 }
