@@ -8,22 +8,53 @@ body {
   font-weight: 300;
   font-size: 20px;
   color: #333333;
+  padding: 10px;
+}
+
+.grid-container-homepage {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "content"
+  "sidebar"
+  "footer"
+}
+
+.header-homepage {
+  grid-area: header;
+}
+
+.main-homepage {
+  grid-area: content;
+}
+
+.aside-homepage {
+  grid-area: sidebar;
+}
+
+.footer-homepage {
+  grid-area: footer;
 }
 
 h1 {
   font-weight: 900;
   font-style: italic;
-  font-size: 70px:
+  font-size: 70px;
+  text-align: center;
 }
 
 h2 {
   font-weight: 100;
   font-size: 50px;
+  text-align: center;
 }
 
 h3 {
   font-weight: 100;
   font-size: 30px;
+  margin: 30px 10px;
 }
 
 h4 {
@@ -40,6 +71,7 @@ time {
 .lead {
   font-weight: 300;
   font-size: 20px;
+  text-align: center;
 }
 
 .card {
@@ -48,10 +80,12 @@ time {
     border-color: #BDBDBD;
     background-color: white;
     padding: 20px 15px;
+    margin: 10px;
 }
 
-.card img {
-
+img {
+    max-width: 100%;
+    min-height: auto;
 }
 
 p {
@@ -81,6 +115,11 @@ a:visited {
   text-decoration: none;
 }
 
+.backtooverview {
+  display: block;
+  margin: 20px 0;
+}
+
 .backtooverview::before{
   content: '\1438';
   padding-right: 10px;
@@ -89,4 +128,72 @@ a:visited {
 
 .backtooverview:hover::before{
   text-decoration: none;
+}
+
+aside div.card {
+  background-color: #EAF7FF;
+}
+
+footer.card p {
+  text-align: center;
+}
+
+@media(min-width:576px) {
+
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  article.card {
+    width: calc(50% - 52px);
+  }
+
+  .aside-about-us {
+    display: flex;
+  }
+
+  aside div div div{
+    width: 50%;
+    margin: 10px;
+  }
+
+  aside div div div p{
+    margin-top: 0px;
+  }
+
+
+}
+
+@media(min-width:1200px){
+  .grid-container-homepage {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "header header header"
+    "content content sidebar"
+    "footer footer footer"
+  }
+
+  aside {
+    margin-top: 94px;
+  }
+
+  aside div.card h3 {
+    margin: 0 0 30px;
+  }
+
+  .aside-about-us {
+    display: block;
+  }
+
+  aside div div div{
+    width: 100%;
+    margin: 0px;
+  }
+
+  aside div div div p{
+    margin-top: 10px;
+  }
 }
