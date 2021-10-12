@@ -22,7 +22,22 @@ body {
   "footer"
 }
 
+.grid-container-post{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "content"
+  "sidebar"
+  "footer"
+}
+
 .header-homepage {
+  grid-area: header;
+}
+
+.header-post{
   grid-area: header;
 }
 
@@ -30,11 +45,26 @@ body {
   grid-area: content;
 }
 
+.main-post {
+  grid-area: content;
+  margin: 0 10px;
+  padding: 15px;
+  background-color: white;
+}
+
 .aside-homepage {
   grid-area: sidebar;
 }
 
+.aside-post{
+  grid-area: sidebar;
+}
+
 .footer-homepage {
+  grid-area: footer;
+}
+
+.footer-post {
   grid-area: footer;
 }
 
@@ -134,8 +164,68 @@ aside div.card {
   background-color: #EAF7FF;
 }
 
+aside div.card h3 {
+  margin: 20px 10px 30px;
+}
+
 footer.card p {
   text-align: center;
+}
+
+.top-nav-post {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time-post {
+  margin: 20px 0;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.top-back-post {
+  flex-grow: 1;
+
+}
+
+.mainimage {
+  width: 100%;
+}
+
+.footer-nav-post {
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.position-left {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+.position-right {
+  flex-grow:1;
+  text-align: right;
+  padding: 20px 0;
+}
+
+.position-left::before {
+  content: '\1438';
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.position-right::after {
+  content: '\1433';
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.content-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 @media(min-width:576px) {
@@ -149,8 +239,13 @@ footer.card p {
     width: calc(50% - 52px);
   }
 
-  .aside-about-us {
+  .aside-about-us-homepage {
     display: flex;
+  }
+
+  .aside-about-us-post {
+    display: flex;
+    justify-content: flex-start;
   }
 
   aside div div div{
@@ -161,7 +256,6 @@ footer.card p {
   aside div div div p{
     margin-top: 0px;
   }
-
 
 }
 
@@ -176,24 +270,35 @@ footer.card p {
     "footer footer footer"
   }
 
-  aside {
+  aside.aside-homepage {
     margin-top: 94px;
   }
 
-  aside div.card h3 {
+  aside.aside-homepage div.card h3 {
     margin: 0 0 30px;
   }
 
-  .aside-about-us {
+  .aside-about-us-homepage {
     display: block;
   }
 
-  aside div div div{
+  aside.aside-homepage div div div{
     width: 100%;
     margin: 0px;
   }
 
-  aside div div div p{
+  aside.aside-homepage div div div p{
     margin-top: 10px;
   }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  .main-post {
+    padding: 20px;
+  }
+
 }
