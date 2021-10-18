@@ -1,6 +1,12 @@
-/* Individual Blog-Style */
+/* INDIVIDUAL BLOG-STYLE */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,900&display=swap');
+@import 'normalize.css';
+@import 'homepage.css';
+@import 'post.css';
+
+
+/* General Elements */
 
 body {
   background-color: #fafbfc;
@@ -9,63 +15,6 @@ body {
   font-size: 20px;
   color: #333333;
   padding: 10px;
-}
-
-.grid-container-homepage {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-  "header"
-  "content"
-  "sidebar"
-  "footer"
-}
-
-.grid-container-post{
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-  "header"
-  "content"
-  "sidebar"
-  "footer"
-}
-
-.header-homepage {
-  grid-area: header;
-}
-
-.header-post{
-  grid-area: header;
-}
-
-.main-homepage {
-  grid-area: content;
-}
-
-.main-post {
-  grid-area: content;
-  margin: 0 10px;
-  padding: 15px;
-  background-color: white;
-}
-
-.aside-homepage {
-  grid-area: sidebar;
-}
-
-.aside-post{
-  grid-area: sidebar;
-}
-
-.footer-homepage {
-  grid-area: footer;
-}
-
-.footer-post {
-  grid-area: footer;
 }
 
 h1 {
@@ -98,6 +47,10 @@ time {
   font-size: 20px;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 figure {
   margin: 0;
 }
@@ -110,6 +63,39 @@ figcaption {
 main div figure figcaption {
   margin: 10px 0px 30px;
 }
+
+img {
+    max-width: 100%;
+    min-height: auto;
+}
+
+a {
+  color: #2D9CDB;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #045BC0;
+}
+
+aside div.card {
+  background-color: #EAF7FF;
+}
+
+aside div.card h3 {
+  margin: 20px 10px 30px;
+}
+
+footer.card p {
+  text-align: center;
+}
+
+
+/* Classes used on all pages */
 
 .lead {
   font-weight: 300;
@@ -126,28 +112,6 @@ main div figure figcaption {
     margin: 10px;
 }
 
-img {
-    max-width: 100%;
-    min-height: auto;
-}
-
-p {
-    line-height: 1.5em;
-}
-
-a {
-  color: #2D9CDB;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #045BC0;
-}
-
 .readmore::before{
   content: '\1433';
   padding-right: 10px;
@@ -158,92 +122,8 @@ a:visited {
   text-decoration: none;
 }
 
-.backtooverview {
-  display: block;
-  margin: 20px 0;
-}
 
-.backtooverview::before{
-  content: '\1438';
-  padding-right: 10px;
-  display: inline-block;
-}
-
-.backtooverview:hover::before{
-  text-decoration: none;
-}
-
-aside div.card {
-  background-color: #EAF7FF;
-}
-
-aside div.card h3 {
-  margin: 20px 10px 30px;
-}
-
-footer.card p {
-  text-align: center;
-}
-
-.top-nav-post {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.time-post {
-  margin: 20px 0;
-  flex-grow: 1;
-  text-align: right;
-}
-
-.top-back-post {
-  flex-grow: 1;
-
-}
-
-.mainimage {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-}
-
-.footer-nav-post {
-  display: flex;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-
-.position-left {
-  flex-grow: 1;
-  padding: 20px 0;
-}
-
-.position-right {
-  flex-grow:1;
-  text-align: right;
-  padding: 20px 0;
-}
-
-.position-left::before {
-  content: '\1438';
-  padding-right: 10px;
-  display: inline-block;
-}
-
-.position-right::after {
-  content: '\1433';
-  padding-left: 10px;
-  display: inline-block;
-}
-
-.content-img {
-  display: block;
-  max-width: 100%;
-}
+/* Styles for tablet or min-width: 576px */
 
 @media(min-width:576px) {
 
@@ -254,15 +134,6 @@ footer.card p {
 
   article.card {
     width: calc(50% - 52px);
-  }
-
-  .aside-about-us-homepage {
-    display: flex;
-  }
-
-  .aside-about-us-post {
-    display: flex;
-    justify-content: flex-start;
   }
 
   aside div div div{
@@ -276,7 +147,11 @@ footer.card p {
 
 }
 
+
+/* Styles for desktop or min-width: 1200px */
+
 @media(min-width:1200px){
+
   .grid-container-homepage {
     display: grid;
     grid-template-rows: auto;
@@ -313,10 +188,6 @@ footer.card p {
     margin-right: auto;
     width: 70%;
     max-width: 1200px;
-  }
-
-  .main-post {
-    padding: 20px;
   }
 
 }

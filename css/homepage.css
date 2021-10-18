@@ -1,0 +1,80 @@
+/* STYLES WHICH ARE ONLY USED ON THE HOMEPAGE */
+
+
+/* Classes */
+
+.grid-container-homepage {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "content"
+  "sidebar"
+  "footer"
+}
+
+.header-homepage {
+  grid-area: header;
+}
+
+.main-homepage {
+  grid-area: content;
+}
+
+.aside-homepage {
+  grid-area: sidebar;
+}
+
+.footer-homepage {
+  grid-area: footer;
+}
+
+
+/* Styles for tablet or min-width: 576px */
+
+@media(min-width:576px) {
+
+  .aside-about-us-homepage {
+    display: flex;
+  }
+
+}
+
+
+/* Styles for desktop or min-width: 1200px */
+
+@media(min-width:1200px){
+
+  .grid-container-homepage {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "header header header"
+    "content content sidebar"
+    "footer footer footer"
+  }
+
+  aside.aside-homepage {
+    margin-top: 94px;
+  }
+
+  aside.aside-homepage div.card h3 {
+    margin: 0 0 30px;
+  }
+
+  .aside-about-us-homepage {
+    display: block;
+  }
+
+  aside.aside-homepage div div div{
+    width: 100%;
+    margin: 0px;
+  }
+
+  aside.aside-homepage div div div p{
+    margin-top: 10px;
+  }
+
+}

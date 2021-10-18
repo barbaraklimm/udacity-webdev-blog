@@ -1,0 +1,132 @@
+/* STYLES WHICH ARE ONLY USED ON THE POSTPAGE */
+
+
+/* Classes used on the post page */
+
+.grid-container-post{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "content"
+  "sidebar"
+  "footer"
+}
+
+.header-post{
+  grid-area: header;
+}
+
+.main-post {
+  grid-area: content;
+  margin: 0 10px;
+  padding: 15px;
+  background-color: white;
+}
+
+.aside-post{
+  grid-area: sidebar;
+}
+
+.footer-post {
+  grid-area: footer;
+}
+
+.mainimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.content-img {
+  display: block;
+  max-width: 100%;
+}
+
+.backtooverview {
+  display: block;
+  margin: 20px 0;
+}
+
+.backtooverview::before{
+  content: '\1438';
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.backtooverview:hover::before{
+  text-decoration: none;
+}
+
+.top-nav-post {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.time-post {
+  margin: 20px 0;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.top-back-post {
+  flex-grow: 1;
+
+}
+
+.footer-nav-post {
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.position-left {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+.position-right {
+  flex-grow:1;
+  text-align: right;
+  padding: 20px 0;
+}
+
+.position-left::before {
+  content: '\1438';
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.position-right::after {
+  content: '\1433';
+  padding-left: 10px;
+  display: inline-block;
+}
+
+
+/* Styles for tablet or min-width: 576px */
+
+@media(min-width:576px) {
+
+  .aside-about-us-post {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+}
+
+
+/* Styles for desktop or min-width: 1200px */
+
+@media(min-width:1200px){
+
+  .main-post {
+    padding: 20px;
+  }
+
+}
