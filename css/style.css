@@ -155,12 +155,14 @@ blockquote p::after {
 svg {
   fill: #333333;
   padding: 20px;
+  vertical-align: -0.125em;
+  width: 2em;
+  height: 2em;
 }
 
 svg:hover {
   fill: #2D9CDB;
 }
-
 
 /* Styles for tablet or min-width: 576px */
 
