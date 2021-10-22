@@ -1,6 +1,6 @@
 /* INDIVIDUAL BLOG-STYLE */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,300;1,900&display=swap');
 @import 'normalize.css';
 @import 'homepage.css';
 @import 'post.css';
@@ -94,6 +94,24 @@ footer.card p {
   text-align: center;
 }
 
+blockquote {
+  border: 3px solid #dedede;
+  padding: 20px;
+  margin: 0px;
+}
+
+blockquote p {
+  font-size: 30px;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
 
 /* Classes used on all pages */
 
@@ -120,6 +138,27 @@ footer.card p {
 
 .readmore:hover::before{
   text-decoration: none;
+}
+
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.push-right {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+svg {
+  fill: #333333;
+  padding: 20px;
+}
+
+svg:hover {
+  fill: #2D9CDB;
 }
 
 
